@@ -6,4 +6,10 @@
     <title>Greeter</title>
     <access_arguments>access CiviCRM</access_arguments>
   </item>
+  <item>
+    <path>civicrm/topdonaties</path>
+    <page_callback>CRM_Training_Page_TopDonaties</page_callback>
+    <title>TopDonaties</title>
+    <access_arguments>access CiviCRM</access_arguments>
+  </item>
 </menu>

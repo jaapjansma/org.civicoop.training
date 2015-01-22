@@ -2,6 +2,17 @@
 
 require_once 'training.civix.php';
 
+function training_civicrm_validateForm( $formName, &$fields, &$files, &$form, &$errors ) {
+  if ($formName == 'CRM_Contact_Form_Contact') {
+    //CRM_Core_Error::debug($fields);    CRM_Core_Error::debug($errors); exit();
+    foreach($fields['address'] as $address_nummer => $address) {
+      if (empty($address['postal_code'])) {
+        $errors['address['.$address_nummer.'][postal_code]'] = ts('Postal code is required');
+      }
+    }
+  }
+}
+
 function _getMenuKeyMax($menuArray) {
   $max = array(max(array_keys($menuArray)));
   foreach ($menuArray as $v) {
